@@ -23,9 +23,11 @@
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "framer-motion": "^11.2.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.0",
+    "react-simple-typewriter": "^5.0.1",
     "tw-merge": "^0.0.1-alpha.3",
     "zustand": "^4.5.4"
   },

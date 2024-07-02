@@ -60,7 +60,7 @@ const Navbar = () => {
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="shadow-md border-border inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden focus:outline-none focus:ring-2"
+            className="shadow-md ring-grape  inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden focus:outline-none ring-2"
             aria-controls="navbar-default"
             aria-expanded="false"
             onClick={() => {
@@ -92,7 +92,7 @@ const Navbar = () => {
             id="navbar-default"
           >
             <ul className="font-medium text-sm sm:text-lg flex flex-col p-4 md:p-0 mt-4  bg-backround  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-              <li onClick={toggleTheme} className="my-2">
+              <li onClick={toggleTheme} className="my-0.5">
                 <Toggle
                   value={theme === 'light' ? true : false}
                   onChange={toggleTheme}

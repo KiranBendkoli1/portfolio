@@ -1,21 +1,35 @@
+import { motion } from 'framer-motion'
 import React from 'react'
+import { Typewriter } from 'react-simple-typewriter'
 
 const Home = () => {
   return (
-    <div className="w-[500px] text-primary border-card">
-      <h1 className="text-primary">Heading</h1>
-      <p className="text-secondary">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic culpa,
-        cumque est porro itaque facilis minima sunt ea praesentium voluptatibus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-        eligendi eveniet error cum asperiores, non optio voluptate, veritatis
-        molestias mollitia eos impedit dolore nam similique? A inventore
-        explicabo veniam, temporibus vel esse iste. Quibusdam delectus et quo
-        facilis eius! Atque.
-      </p>
-      <button className="bg-grape text-white p-2 rounded-xl px-4 my-3">
-        Continue button
-      </button>
+    <div className="h-[400px] flex justify-center items-center content-center align-middle place-items-center justify-items-center">
+      <div className="text-primary text-4xl">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          Hi, I'm a{' '}
+          <span className="name">
+            <Typewriter
+              words={[
+                'Computer Engineer',
+                'Software Developer',
+                'React Js Developer'
+              ]}
+              loop
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />{' '}
+          </span>
+        </motion.h1>
+        
+      </div>
     </div>
   )
 }
