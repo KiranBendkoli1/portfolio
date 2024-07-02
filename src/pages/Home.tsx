@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className="w-52 h-screen text-primary border-card">
+    <div className="w-[500px] h-screen text-primary border-card">
       <h1 className="text-primary">Heading</h1>
       <p className="text-secondary">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic culpa,
@@ -13,7 +13,7 @@ const Home = () => {
         explicabo veniam, temporibus vel esse iste. Quibusdam delectus et quo
         facilis eius! Atque.
       </p>
-      <button className="bg-grape text-white p-2 rounded-lg m-5">
+      <button className="bg-grape text-white p-2 rounded-xl px-4 my-3">
         Continue button
       </button>
     </div>
