@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className="w-[500px] h-screen text-primary border-card">
+    <div className="w-[500px] text-primary border-card">
       <h1 className="text-primary">Heading</h1>
       <p className="text-secondary">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic culpa,
