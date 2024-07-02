@@ -1,15 +1,12 @@
-import Home from 'pages/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AppRouter from 'routes'
+import useThemeStore from 'store/useThemeStore'
 
 function App() {
+  const theme = useThemeStore((state) => state.theme)
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route index path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <div className={theme}>
+      <AppRouter />
+    </div>
   )
 }
 
