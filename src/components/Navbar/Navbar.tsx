@@ -6,44 +6,44 @@ import { Toggle } from 'components/Toggle'
 import { classNames } from 'utils'
 
 const Navbar = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const { theme, toggleTheme } = useThemeStore((state) => state)
   const [navToggle, setNavToggle] = useState<boolean>(true)
-  const [navItems, setNavItems] = useState([
-    {
-      title: 'Home',
-      url: LOC_URL.HOME,
-      active: true
-    },
-    {
-      title: 'Portfolio',
-      url: LOC_URL.PORTFOLIO,
-      active: false
-    },
-    {
-      title: 'Experience',
-      url: LOC_URL.EXPERIENCE,
-      active: false
-    },
-    {
-      title: 'Resume',
-      url: LOC_URL.RESUME,
-      active: false
-    },
-    {
-      title: 'Contact',
-      url: LOC_URL.CONTACT,
-      active: false
-    }
-  ])
+  // const [navItems, setNavItems] = useState([
+  //   {
+  //     title: 'Home',
+  //     url: LOC_URL.HOME,
+  //     active: true
+  //   },
+  //   {
+  //     title: 'Portfolio',
+  //     url: LOC_URL.PORTFOLIO,
+  //     active: false
+  //   },
+  //   {
+  //     title: 'Experience',
+  //     url: LOC_URL.EXPERIENCE,
+  //     active: false
+  //   },
+  //   {
+  //     title: 'Resume',
+  //     url: LOC_URL.RESUME,
+  //     active: false
+  //   },
+  //   {
+  //     title: 'Contact',
+  //     url: LOC_URL.CONTACT,
+  //     active: false
+  //   }
+  // ])
 
-  const updateActive = (index: number) => {
-    setNavItems((prev) => {
-      prev.forEach((value) => (value.active = false))
-      prev[index].active = true
-      return prev
-    })
-  }
+  // const updateActive = (index: number) => {
+  //   setNavItems((prev) => {
+  //     prev.forEach((value) => (value.active = false))
+  //     prev[index].active = true
+  //     return prev
+  //   })
+  // }
 
   return (
     <>
@@ -98,7 +98,7 @@ const Navbar = () => {
                   onChange={toggleTheme}
                 />
               </li>
-              {navItems.map((item, index) => {
+              {/* {navItems.map((item, index) => {
                 return (
                   <li key={item.url}>
                     <div
@@ -117,7 +117,7 @@ const Navbar = () => {
                     </div>
                   </li>
                 )
-              })}
+              })} */}
             </ul>
           </div>
         </div>

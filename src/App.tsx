@@ -6,7 +6,9 @@ function App() {
   const theme = useThemeStore((state) => state.theme)
   return (
     <div className={classNames(theme, 'bg-backround h-svh')}>
-      <AppRouter />
+      <div className="h-full">
+        <AppRouter />
+      </div>
     </div>
   )
 }

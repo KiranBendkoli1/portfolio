@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
+import Portfolio from './Portfolio'
 
 const Home = () => {
   return (
@@ -11,13 +12,13 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          Hi, I'm a{' '}
+          Hi, I'm a
           <span className="name">
             <Typewriter
               words={[
-                'Computer Engineer',
-                'Software Developer',
-                'React Js Developer'
+                ' Computer Engineer',
+                ' Software Developer',
+                ' React Js Developer'
               ]}
               loop
               cursor
@@ -28,7 +29,6 @@ const Home = () => {
             />{' '}
           </span>
         </motion.h1>
-        
       </div>
     </div>
   )
