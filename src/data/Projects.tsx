@@ -48,7 +48,7 @@ const projects: ProjectType[] = [
   {
     index: 2,
     title: 'Chrome Tab Tracker',
-    domain: 'google chrome extension',
+    domain: 'Google chrome extension',
     img: cc0,
     img1: cc0,
     img2: cc1,

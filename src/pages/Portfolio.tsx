@@ -4,16 +4,16 @@ import React from 'react'
 
 const Portfolio = () => {
   return (
-    <>
-      <h2 className="md:px-16 text-primary text-2xl">Projects</h2>
-      <div className="px-4 md:px-16 bg-backround h-full align-middle items-center flex justify-center flex-col">
-        <div>
-          {projects.map((project) => {
-            return <Project project={project} key={project.index} />
-          })}
+      <div className=" grid justify-center bg-backround">
+        <h2 className="text-primary text-2xl -translate-x-10">Projects</h2>
+        <div className="bg-backround h-full align-middle items-center flex justify-center flex-col">
+          <div className='grid grid-cols-3 space-x-2'>
+            {projects.map((project) => {
+              return <Project project={project} key={project.index} />
+            })}
+          </div>
         </div>
       </div>
-    </>
   )
 }
 
