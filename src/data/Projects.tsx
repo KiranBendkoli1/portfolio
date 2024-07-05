@@ -73,7 +73,7 @@ const projects: ProjectType[] = [
   },
   {
     index: 4,
-    title: 'Github Information finder',
+    title: 'Github Information Finder',
     domain: 'Web Development',
     img: gf0,
     img1: gf0,
@@ -81,7 +81,7 @@ const projects: ProjectType[] = [
     img3: gf2,
     islink: true,
     link: 'http://coderays.me/github-information-finder/',
-    desc: "This is web app which helps you to find users information based on their username you can also find their repositorie's brief information , followings and followers information through it",
+    desc: "This is web app which helps you to find users information based on their username you can also find their repositorie's brief information and many more",
     source: 'https://github.com/KiranBendkoli1/github-information-finder'
   },
   {
@@ -94,7 +94,7 @@ const projects: ProjectType[] = [
     img3: mrs2,
     islink: true,
     link: 'https://tmdbmovierecommendationsystem.herokuapp.com/',
-    desc: 'Movie recommendation system recommends you movies based on movies you watched you just neet to select movie of your intrest and it will recommends you five different movies based on content similarity. ',
+    desc: 'Movie recommendation system recommends you movies based on movies you watched.',
     source: 'https://github.com/KiranBendkoli1/movie-recommendation-system'
   }
 ]
