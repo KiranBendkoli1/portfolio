@@ -5,6 +5,9 @@ const config: Config= {
   content: ['./src/**/*.{mjs,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily:{
+        cardo:"Cardo"
+      },
       colors:{
         backround:"rgba(var(--background))",
         border:"rgba(var(--border))",

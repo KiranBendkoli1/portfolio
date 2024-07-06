@@ -12,7 +12,7 @@ const Home = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
-        className="text-primary text-xl sm:text-4xl h-[10px] my-10 sm:my-20 grid grid-cols-2"
+        className="text-primary font-cardo text-xl sm:text-4xl h-[10px] my-10 sm:my-20 grid grid-cols-2"
       >
         <div className="name w-[500px]">
           Hi, I'm a
@@ -30,7 +30,7 @@ const Home = () => (
             delaySpeed={1000}
           />{' '}
         </div>
-        <div className="hidden sm:block sm:-translate-y-16 sm:translate-x-16 shadow-xl bg-backround/25 h-[250px] w-[250px] rounded-full overflow-clip border border-border">
+        <div className="hidden md:block sm:-translate-y-16 sm:translate-x-28 shadow-xl bg-backround/25 h-[350px] w-[350px] rounded-full overflow-clip border border-border">
           <img src={profileImg} alt="" />
         </div>
       </motion.div>
