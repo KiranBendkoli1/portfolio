@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LOC_URL from 'constants/LOC_URL'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import useThemeStore from 'store/useThemeStore'
 import { Toggle } from 'components/Toggle'
 import { classNames } from 'utils'
 
 const Navbar = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const [, setUpdateNav] = useState<boolean>()
   const { theme, toggleTheme } = useThemeStore((state) => state)
   const [navToggle, setNavToggle] = useState<boolean>(true)
   const [navItems, setNavItems] = useState([
@@ -45,6 +47,19 @@ const Navbar = () => {
     })
   }
 
+  useEffect(() => {
+    if (location) {
+      setNavItems((prev) => {
+        prev.forEach((value) => {
+          if (value.url === location.pathname) value.active = true
+          else value.active = false
+        })
+        setUpdateNav(true)
+        return prev
+      })
+    }
+  }, [location])
+
   return (
     <>
       <nav className="bg-backround">
@@ -53,7 +68,7 @@ const Navbar = () => {
             to={LOC_URL.HOME}
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <span className="self-center text-3xl font-semibold whitespace-nowrap text-primary">
+            <span className="self-center text-3xl font-semibold whitespace-nowrap text-primary font-cardo">
               Kiran Bendkoli
             </span>
           </Link>

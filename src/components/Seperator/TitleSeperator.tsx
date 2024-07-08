@@ -5,7 +5,7 @@ const TitleSeperator: React.FC<{ title: string }> = ({ title }) => {
     <>
       <div className="inline-flex items-center justify-center w-full">
         <hr className="w-[600px] h-1 my-8  bg-primary" />
-        <div className="font-cardo italic absolute px-4 -translate-x-1/2 left-1/2 bg-backround text-primary text-[50px]">
+        <div className="font-cardo italic absolute px-4 -translate-x-1/2 left-1/2 bg-backround text-primary text-xl sm:text-[32px] md:text-[50px]">
           {title}
         </div>
       </div>

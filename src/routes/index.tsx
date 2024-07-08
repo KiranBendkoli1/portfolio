@@ -15,7 +15,7 @@ const AppRouter = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route index path={LOC_URL.HOME} element={<Landing />} />
+          <Route index path={LOC_URL.HOME} element={<Home />} />
           <Route path={LOC_URL.PORTFOLIO} element={<Portfolio />} />
           <Route path={LOC_URL.EXPERIENCE} element={<Experience />} />
           <Route path={LOC_URL.RESUME} element={<Resume />} />
