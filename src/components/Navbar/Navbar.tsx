@@ -23,11 +23,6 @@ const Navbar = () => {
       active: false
     },
     {
-      title: 'Experience',
-      url: LOC_URL.EXPERIENCE,
-      active: false
-    },
-    {
       title: 'Resume',
       url: LOC_URL.RESUME,
       active: false

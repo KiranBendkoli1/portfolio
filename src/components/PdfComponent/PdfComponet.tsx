@@ -1,7 +1,7 @@
 import useDimensions from 'hooks/useDimensions'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { Document, Page,pdfjs } from 'react-pdf'
+import { Document, Page, pdfjs } from 'react-pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`
 
