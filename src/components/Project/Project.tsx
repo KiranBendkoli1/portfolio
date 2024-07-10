@@ -27,7 +27,7 @@ const Project: React.FC<Props> = ({ project }) => {
           {project.desc}
         </p>
         <button className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">
-          See More
+          View details
         </button>
       </div>
     </div>
