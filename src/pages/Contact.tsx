@@ -1,4 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import Button from 'components/Button'
+import { Input } from 'components/Input/Input'
 import TitleSeperator from 'components/Seperator/TitleSeperator'
 import { useForm } from 'react-hook-form'
 import contactSchema from 'schemas/contactSchema'
@@ -21,33 +23,45 @@ const Contact = () => {
     <div className="">
       <TitleSeperator title={'Contact'} />
       <h2 className="text-primary text-2xl text-center divider"></h2>
-      <div className="min-h-screen items-center justify-center  bg-backround">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            {...register('email')}
-            placeholder="email"
-            type="email"
+      <div className="items-center  bg-backround flex justify-center">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="container grid grid-cols-1 gap-5 w-[600px] content-center"
+        >
+           <Input
+            name={'name'}
+            register={register}
+            label={'Full name'}
+            placeholder={'Enter full name'}
             required
           />
-          <input
-            {...register('message')}
-            placeholder="email"
-            type="text"
+          <Input
+            name={'email'}
+            register={register}
+            label={'Email address'}
+            type={'email'}
+            placeholder={'Enter email addreess'}
             required
           />
-          <input
-            {...register('mobile')}
-            placeholder="email"
-            type="text"
+          <Input
+            name={'mobile'}
+            register={register}
+            label={'Mobile number'}
+            type={'number'}
+            placeholder={'Enter mobile number'}
             required
           />
-          <input
-            {...register('name')}
-            placeholder="email"
-            type="text"
+          <Input
+            name={'message'}
+            register={register}
+            label={'Message'}
+            type={'email'}
+            placeholder={'Enter message'}
             required
+            textArea
           />
-          <button type="submit">Submit</button>
+
+          <Button type="submit">Submit</Button>
         </form>
       </div>
     </div>
