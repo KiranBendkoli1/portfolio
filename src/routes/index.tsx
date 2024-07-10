@@ -7,6 +7,7 @@ import Portfolio from 'pages/Portfolio'
 import Resume from 'pages/Resume'
 import Contact from 'pages/Contact'
 import ProjectDetails from 'pages/ProjectDetails'
+import Login from 'pages/Login'
 const AppRouter = () => {
   return (
     <>
@@ -17,7 +18,11 @@ const AppRouter = () => {
           <Route path={URL_ROUTES.PORTFOLIO} element={<Portfolio />} />
           <Route path={URL_ROUTES.RESUME} element={<Resume />} />
           <Route path={URL_ROUTES.CONTACT} element={<Contact />} />
-          <Route path={URL_ROUTES.PROJECT_DETAILS} element={<ProjectDetails />} />
+          <Route
+            path={URL_ROUTES.PROJECT_DETAILS}
+            element={<ProjectDetails />}
+          />
+          <Route path={URL_ROUTES.LOGIN} element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
