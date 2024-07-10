@@ -1,4 +1,3 @@
-import projects from 'data/ProjectsData'
 import { FC } from 'react'
 import { ProjectType } from 'types/common'
 
@@ -6,7 +5,7 @@ const Carousel:FC<{project:ProjectType}> = ({project}) => {
   return (
     <div
       id="default-carousel"
-      className="relative w-[500px]"
+      className="relative w-full md:w-[500px]"
       data-carousel="slide"
     >
       <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -72,9 +71,9 @@ const Carousel:FC<{project:ProjectType}> = ({project}) => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M5 1 1 5l4 4"
             />
           </svg>
@@ -96,9 +95,9 @@ const Carousel:FC<{project:ProjectType}> = ({project}) => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="m1 9 4-4-4-4"
             />
           </svg>
