@@ -19,8 +19,8 @@ export const Input = ({
   textArea
 }: Props) => {
   return (
-    <label htmlFor={name} className="text-primary gap-2">
-     <span className='my-4'> {label}</span>
+    <label htmlFor={name} className="text-primary gap-4">
+     <span className='pb-6'> {label}</span>
       {textArea ? (
         <textarea
           {...register(name)}

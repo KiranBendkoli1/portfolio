@@ -6,15 +6,15 @@ import profileImg from '../assets/images/kiran2.png'
 import Button from 'components/Button'
 
 const Home = () => (
-  <div className="container grid justify-center px-4">
+  <div className="container grid justify-center  sm:pl-6">
     <div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
-        className="text-primary font-cardo text-xl sm:text-4xl h-[10px] my-10 sm:my-20 grid grid-cols-2"
+        className="text-primary font-cardo text-xl sm:text-[50px] h-[10px] my-10 sm:mt-32 sm:mb-16 grid grid-cols-2 align-middle"
       >
-        <div className="name w-[500px]">
+        <div className="name w-[650px]">
           Hi, I'm a
           <Typewriter
             words={[
@@ -30,12 +30,12 @@ const Home = () => (
             delaySpeed={1000}
           />{' '}
         </div>
-        <div className="hidden md:block sm:-translate-y-16 sm:translate-x-28 shadow-xl bg-backround/25 h-[350px] w-[350px] rounded-full overflow-clip border border-border">
+        <div className="hidden md:block sm:-translate-y-16 sm:translate-x-40 shadow-xl bg-backround/25 h-[450px] w-[450px] rounded-full overflow-clip border border-border">
           <img src={profileImg} alt="" />
         </div>
       </motion.div>
       <motion.p
-        className="text-secondary w-full sm:w-[520px]"
+        className="text-secondary w-full sm:w-[600px] text-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2.5 }}
