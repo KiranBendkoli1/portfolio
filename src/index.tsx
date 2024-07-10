@@ -1,5 +1,6 @@
 import App from 'App'
 import { createRoot } from 'react-dom/client'
+import 'flowbite/dist/flowbite'
 import 'tailwindcss/tailwind.css'
 import 'styles/globals.css'
 
