@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import LOC_URL from 'constants/LOC_URL'
+import URL_ROUTES from 'constants/URL_ROUTES'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import useThemeStore from 'store/useThemeStore'
 import { Toggle } from 'components/Toggle'
@@ -14,22 +14,22 @@ const Navbar = () => {
   const [navItems, setNavItems] = useState([
     {
       title: 'Home',
-      url: LOC_URL.HOME,
+      url: URL_ROUTES.HOME,
       active: true
     },
     {
       title: 'Portfolio',
-      url: LOC_URL.PORTFOLIO,
+      url: URL_ROUTES.PORTFOLIO,
       active: false
     },
     {
       title: 'Resume',
-      url: LOC_URL.RESUME,
+      url: URL_ROUTES.RESUME,
       active: false
     },
     {
       title: 'Contact',
-      url: LOC_URL.CONTACT,
+      url: URL_ROUTES.CONTACT,
       active: false
     }
   ])
@@ -60,7 +60,7 @@ const Navbar = () => {
       <nav className="bg-backround">
         <div className="flex flex-wrap items-center justify-between md:mx-12 p-4">
           <Link
-            to={LOC_URL.HOME}
+            to={URL_ROUTES.HOME}
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-3xl font-semibold whitespace-nowrap text-primary font-cardo">

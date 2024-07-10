@@ -1,6 +1,8 @@
 import projects from 'data/ProjectsData'
+import { FC } from 'react'
+import { ProjectType } from 'types/common'
 
-const Carousel = () => {
+const Carousel:FC<{project:ProjectType}> = ({project}) => {
   return (
     <div
       id="default-carousel"
@@ -10,7 +12,7 @@ const Carousel = () => {
       <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src={projects[0].img1}
+            src={project.img1}
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -18,7 +20,7 @@ const Carousel = () => {
 
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src={projects[0].img2}
+            src={project.img2}
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -26,7 +28,7 @@ const Carousel = () => {
 
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src={projects[0].img3}
+            src={project.img3}
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
