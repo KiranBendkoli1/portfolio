@@ -10,9 +10,14 @@ import { auth } from 'config/firebase'
 import { emit } from 'process'
 import { toast } from 'react-toastify'
 import useThemeStore from 'store/useThemeStore'
+import { useNavigate } from 'react-router-dom'
+import URL_ROUTES from 'constants/URL_ROUTES'
+import useAuthStore from 'store/useAuthStore'
 
 const Login = () => {
+  const navigate = useNavigate()
   const theme = useThemeStore((state) => state.theme)
+  const { setIsAuthenticated } = useAuthStore((state) => state)
   const {
     register,
     handleSubmit,
@@ -30,11 +35,12 @@ const Login = () => {
         password
       )
       const user = userCredentials.user
-      toast.success('Login Successfully!', {theme})
-      console.log(user)
+      setIsAuthenticated()
+      toast.success('Login Successfully!', { theme })
+      navigate(URL_ROUTES.DASHBOARD)
     } catch (error) {
       console.log(error)
-      toast.error('Incorrect credentials!', {theme})
+      toast.error('Invalid credentials!', { theme })
     }
   }
 

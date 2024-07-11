@@ -24,8 +24,8 @@ const useAuthStore = create<AuthStoreState>(
       }
     }),
     {
-      name: 'answer-storage',
-      getStorage: () => sessionStorage
+      name: 'auth-store',
+      getStorage: () => localStorage
     }
   )
 )

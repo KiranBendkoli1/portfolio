@@ -5,5 +5,6 @@ export default {
   CONTACT: '/contact',
   RESUME: '/resume',
   PROJECT_DETAILS: '/project/:index',
-  LOGIN: '/login'
+  LOGIN: '/login',
+  DASHBOARD:'/dashboard'
 }

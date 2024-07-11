@@ -1,5 +1,5 @@
 import React from 'react'
-import resume from '../assets/KiranBendkoli.pdf'
+import resume from '../../assets/KiranBendkoli.pdf'
 import PdfComponet from 'components/PdfComponent/PdfComponet'
 import Button from 'components/Button'
 import TitleSeperator from 'components/Seperator/TitleSeperator'
@@ -11,7 +11,7 @@ const Resume = () => {
   return (
     <div>
       <TitleSeperator title="My Resume" />
-      <p  className="text-center py-6">
+      <p className="text-center py-6">
         <a href={url} target="_blank">
           <Button>Download resume</Button>
         </a>
