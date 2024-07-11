@@ -10,7 +10,7 @@ const Navbar = () => {
   const location = useLocation()
   const [, setUpdateNav] = useState<boolean>()
   const { theme, toggleTheme } = useThemeStore((state) => state)
-  const [navToggle, setNavToggle] = useState<boolean>(true)
+  const [navToggle, setNavToggle] = useState<boolean>(false)
   const [navItems, setNavItems] = useState([
     {
       title: 'Home',
