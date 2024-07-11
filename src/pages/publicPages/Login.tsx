@@ -5,7 +5,7 @@ import TitleSeperator from 'components/Seperator/TitleSeperator'
 import { useForm } from 'react-hook-form'
 import loginSchema from 'schemas/loginSchema'
 import { LoginBody } from 'types/auth'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { AuthError, signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from 'config/firebase'
 import { emit } from 'process'
 import { toast } from 'react-toastify'
@@ -13,6 +13,7 @@ import useThemeStore from 'store/useThemeStore'
 import { useNavigate } from 'react-router-dom'
 import URL_ROUTES from 'constants/URL_ROUTES'
 import useAuthStore from 'store/useAuthStore'
+import { FirebaseError } from 'firebase/app'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -36,11 +37,27 @@ const Login = () => {
       )
       const user = userCredentials.user
       setIsAuthenticated()
+      console.log(userCredentials)
       toast.success('Login Successfully!', { theme })
-      navigate(URL_ROUTES.DASHBOARD)
-    } catch (error) {
-      console.log(error)
-      toast.error('Invalid credentials!', { theme })
+      navigate(URL_ROUTES.ADMIN_DASHBOARD)
+    } catch (error: any) {
+      const errorCode = error.message.substring(
+        error.message.indexOf('(') + 1,
+        error.message.indexOf(')')
+      )
+      console.log(errorCode)
+      switch (errorCode) {
+        case 'auth/network-request-failed':
+          toast.error("Please make sure you're connected to internet!", {
+            theme
+          })
+          break
+        case 'auth/invalid-credential':
+          toast.error("Invalid email or password enter", {
+            theme
+          })
+          break
+      }
     }
   }
 

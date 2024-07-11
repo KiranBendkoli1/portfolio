@@ -15,7 +15,6 @@ const AppRouter = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <Routes>
           <Route element={<PublicRoute />}>
             <Route index path={URL_ROUTES.HOME} element={<Home />} />
@@ -29,7 +28,7 @@ const AppRouter = () => {
             <Route path={URL_ROUTES.LOGIN} element={<Login />} />
           </Route>
           <Route element={<PrivateRoute />}>
-            <Route index path={URL_ROUTES.DASHBOARD} element={<Dashboard />} />
+            <Route index path={URL_ROUTES.ADMIN_DASHBOARD} element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
