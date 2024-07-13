@@ -141,7 +141,7 @@ const Sidebar: React.FC<{ children: ReactElement }> = ({ children }) => {
         </div>
       </aside>
 
-      <div className="p-4 sm:ml-64 sm:pt-16">
+      <div className="p-4 sm:ml-64 sm:pt-16 h-full bg-backround">
         <div className="p-4">{children}</div>
       </div>
     </div>
