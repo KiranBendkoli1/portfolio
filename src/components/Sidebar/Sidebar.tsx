@@ -60,16 +60,11 @@ const Sidebar: React.FC<{ children: ReactElement }> = ({ children }) => {
                   ></path>
                 </svg>
               </button>
-              <a href="https://flowbite.com" className="flex ms-2 md:me-24">
-                <img
-                  src="https://flowbite.com/docs/images/logo.svg"
-                  className="h-8 me-3"
-                  alt="FlowBite Logo"
-                />
+              <p className="flex ms-2 md:me-24">
                 <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">
                   Kiran Bendkoli
                 </span>
-              </a>
+              </p>
             </div>
             <div className="flex items-center">
               <div className="flex items-center ms-3">
@@ -95,12 +90,12 @@ const Sidebar: React.FC<{ children: ReactElement }> = ({ children }) => {
                   </button>
                 </div>
                 <div
-                  className="z-50 hidden my-4 text-base list-none bg-background divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                  className="z-50 hidden my-4 text-base list-none divide-y rounded shadow bg-gray-700 divide-gray-600"
                   id="dropdown-user"
                 >
                   <div className="px-4 py-3" role="none">
                     <p
-                      className="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                      className="text-sm font-medium text-white truncate"
                       role="none"
                     >
                       {email}
@@ -110,7 +105,7 @@ const Sidebar: React.FC<{ children: ReactElement }> = ({ children }) => {
                     <li>
                       <a
                         href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 text-sm text-white hover:text-white"
                         role="menuitem"
                       >
                         Log out
