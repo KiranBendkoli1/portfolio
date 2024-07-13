@@ -1,3 +1,4 @@
+import Button from 'components/Button'
 import Table from 'components/Table/Table'
 import projects from 'data/ProjectsData'
 import React, { useMemo } from 'react'
@@ -28,7 +29,7 @@ const ProjectListings = () => {
       title: 'images',
       srOnly: true,
       render: (item: Item) => {
-        return <img className="rounded" src={item.image_url} alt={item.title} />
+        return <img className="rounded h-54 w-[400px]" src={item.image_url} alt={item.title} />
       }
     },
     {
@@ -69,6 +70,12 @@ const ProjectListings = () => {
   ]
   return (
     <div>
+      <div className="flex justify-between my-4 sm:mb-10 sm:mt-4">
+        <h1 className="text-primary text-3xl ">Projects</h1>
+        <div>
+          <Button>Add Project</Button>
+        </div>
+      </div>
       <Table columns={columns} data={data} />
     </div>
   )

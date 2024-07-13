@@ -19,8 +19,8 @@ const Table: React.FC<{ columns: Column[]; data: Record<string, any> }> = ({
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               {columns.map((column) => (
-                <th key={column.title} scope="col" className="px-16 py-3">
-                  <span className={classNames(column.srOnly && 'sr-only')}>
+                <th key={column.title} scope="col" className="px-8 py-3 text-start">
+                  <span className={classNames("truncate text-start", "")}>
                     {column.title}
                   </span>
                 </th>
