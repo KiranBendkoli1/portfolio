@@ -1,7 +1,6 @@
 import React from 'react'
 import Home from 'pages/publicPages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from 'components/Navbar/Navbar'
 import URL_ROUTES from 'constants/URL_ROUTES'
 import Portfolio from 'pages/publicPages/Portfolio'
 import Resume from 'pages/publicPages/Resume'
@@ -11,6 +10,9 @@ import Login from 'pages/publicPages/Login'
 import PublicRoute from './PublicRoute'
 import PrivateRoute from './PrivateRoute'
 import Dashboard from 'pages/privatePages/Dashboard'
+import Messages from 'pages/privatePages/Messages'
+import Profile from 'pages/privatePages/Profile'
+import ProjectListings from 'pages/privatePages/ProjectListings'
 const AppRouter = () => {
   return (
     <>
@@ -28,7 +30,17 @@ const AppRouter = () => {
             <Route path={URL_ROUTES.LOGIN} element={<Login />} />
           </Route>
           <Route element={<PrivateRoute />}>
-            <Route index path={URL_ROUTES.ADMIN_DASHBOARD} element={<Dashboard />} />
+            <Route
+              index
+              path={URL_ROUTES.ADMIN_DASHBOARD}
+              element={<Dashboard />}
+            />
+            <Route
+              path={URL_ROUTES.ADMIN_PROJECTS}
+              element={<ProjectListings />}
+            />
+            <Route path={URL_ROUTES.ADMIN_INBOX} element={<Messages />} />
+            <Route path={URL_ROUTES.ADMIN_PROFILE} element={<Profile />} />9
           </Route>
         </Routes>
       </BrowserRouter>

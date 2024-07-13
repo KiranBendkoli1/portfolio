@@ -3,7 +3,8 @@ import { persist, PersistOptions } from 'zustand/middleware'
 
 interface AuthStoreState {
   isAuthenticated: boolean
-  clearIsAuthenticated: () => void
+  email: string
+  clearIsAuthenticated: (email: string) => void
   setIsAuthenticated: () => void
 }
 
@@ -16,11 +17,12 @@ const useAuthStore = create<AuthStoreState>(
   (persist as AuthPersist)(
     (set) => ({
       isAuthenticated: false,
+      email: '',
+      setIsAuthenticated: (email: string) => {
+        set({ isAuthenticated: true, email: email })
+      },
       clearIsAuthenticated: () => {
         set({ isAuthenticated: false })
-      },
-      setIsAuthenticated: () => {
-        set({ isAuthenticated: true })
       }
     }),
     {
