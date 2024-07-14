@@ -1,7 +1,9 @@
 import Button from 'components/Button'
 import Table from 'components/Table/Table'
+import URL_ROUTES from 'constants/URL_ROUTES'
 import projects from 'data/ProjectsData'
 import React, { useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface Item {
   image_url: string
@@ -12,6 +14,7 @@ interface Item {
 }
 
 const ProjectListings = () => {
+  const navigate = useNavigate()
   const data: Item[] = useMemo(() => {
     return projects.map((project) => {
       return {
@@ -29,7 +32,13 @@ const ProjectListings = () => {
       title: 'images',
       srOnly: true,
       render: (item: Item) => {
-        return <img className="rounded h-54 w-[400px]" src={item.image_url} alt={item.title} />
+        return (
+          <img
+            className="rounded h-54 w-[400px]"
+            src={item.image_url}
+            alt={item.title}
+          />
+        )
       }
     },
     {
@@ -64,7 +73,14 @@ const ProjectListings = () => {
       title: 'view details',
       srOnly: false,
       render: (item: Item) => {
-        return <p>View details</p>
+        return (
+          <p
+            className="cursor-pointer"
+            onClick={() => navigate(URL_ROUTES.ADMIN_VIEW_PROJECT)}
+          >
+            View details
+          </p>
+        )
       }
     }
   ]
@@ -73,7 +89,13 @@ const ProjectListings = () => {
       <div className="flex justify-between my-4 sm:mb-10 sm:mt-4">
         <h1 className="text-primary text-3xl ">Projects</h1>
         <div>
-          <Button>Add Project</Button>
+          <Button
+            onClick={() => {
+              navigate(URL_ROUTES.ADMIN_ADD_PROJECT)
+            }}
+          >
+            Add Project
+          </Button>
         </div>
       </div>
       <Table columns={columns} data={data} />

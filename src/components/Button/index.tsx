@@ -12,6 +12,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, type }) => {
       <button
         className="bg-grape text-white py-2 px-6 cursor-pointer rounded-lg"
         type={type ?? 'button'}
+        onClick={onClick}
       >
         {children}
       </button>

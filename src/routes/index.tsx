@@ -13,6 +13,7 @@ import Dashboard from 'pages/privatePages/Dashboard'
 import Messages from 'pages/privatePages/Messages'
 import Profile from 'pages/privatePages/Profile'
 import ProjectListings from 'pages/privatePages/ProjectListings'
+import AddProject from 'pages/privatePages/AddProject'
 const AppRouter = () => {
   return (
     <>
@@ -38,6 +39,14 @@ const AppRouter = () => {
             <Route
               path={URL_ROUTES.ADMIN_PROJECTS}
               element={<ProjectListings />}
+            />
+            <Route
+              path={URL_ROUTES.ADMIN_VIEW_PROJECT}
+              element={<ProjectDetails />}
+            />
+            <Route
+              path={URL_ROUTES.ADMIN_ADD_PROJECT}
+              element={<AddProject />}
             />
             <Route path={URL_ROUTES.ADMIN_INBOX} element={<Messages />} />
             <Route path={URL_ROUTES.ADMIN_PROFILE} element={<Profile />} />9
