@@ -1,6 +1,7 @@
 import { UseFormRegister } from 'react-hook-form'
 export interface Props {
   register: UseFormRegister<any>
+  className?: string
   label: string
   type?: string
   placeholder: string
@@ -16,28 +17,31 @@ export const Input = ({
   placeholder,
   required,
   name,
-  textArea
+  textArea,
+  className
 }: Props) => {
   return (
-    <label htmlFor={name} className="text-primary gap-4">
-     <span className='pb-6'> {label}</span>
-      {textArea ? (
-        <textarea
-          {...register(name)}
-          placeholder={placeholder}
-          required={required}
-          rows={5}
-          className="w-full rounded-lg px-2 text-secondary"
-        />
-      ) : (
-        <input
-          {...register(name)}
-          placeholder={placeholder}
-          type={type ?? 'text'}
-          required={required}
-          className="w-full h-11 rounded-lg px-2 text-secondary"
-        />
-      )}
-    </label>
+    <div className={className}>
+      <label htmlFor={name} className="text-primary gap-5">
+        <span className="pb-6"> {label}</span>
+        {textArea ? (
+          <textarea
+            {...register(name)}
+            placeholder={placeholder}
+            required={required}
+            rows={5}
+            className="w-full rounded-lg px-2 text-secondary"
+          />
+        ) : (
+          <input
+            {...register(name)}
+            placeholder={placeholder}
+            type={type ?? 'text'}
+            required={required}
+            className="w-full h-11 rounded-lg px-2 text-secondary"
+          />
+        )}
+      </label>
+    </div>
   )
 }
