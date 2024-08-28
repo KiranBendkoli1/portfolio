@@ -14,13 +14,14 @@ import Messages from 'pages/privatePages/Messages'
 import Profile from 'pages/privatePages/Profile'
 import ProjectListings from 'pages/privatePages/ProjectListings'
 import AddProject from 'pages/privatePages/AddProject'
+import Hero from 'pages/publicPages/Hero'
 const AppRouter = () => {
   return (
-    <>
+    <div className="w-full h-auto bg-bodyColor text-lightText px-4">
       <BrowserRouter>
         <Routes>
           <Route element={<PublicRoute />}>
-            <Route index path={URL_ROUTES.HOME} element={<Home />} />
+            <Route index path={URL_ROUTES.HOME} element={<Hero />} />
             <Route path={URL_ROUTES.PORTFOLIO} element={<Portfolio />} />
             <Route path={URL_ROUTES.RESUME} element={<Resume />} />
             <Route path={URL_ROUTES.CONTACT} element={<Contact />} />
@@ -53,7 +54,7 @@ const AppRouter = () => {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 
