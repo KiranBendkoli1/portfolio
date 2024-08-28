@@ -14,8 +14,7 @@ const Navbar = () => {
   const location = useLocation()
   const [, setUpdateNav] = useState<boolean>()
   const { theme, toggleTheme } = useThemeStore((state) => state)
-  const [showMenu, setShowMenu] = useState(true)
-  const [navToggle, setNavToggle] = useState<boolean>(false)
+  const [showMenu, setShowMenu] = useState(false)
   const [navItems, setNavItems] = useState([
     {
       title: 'Home',
@@ -95,7 +94,7 @@ const Navbar = () => {
             <FiMenu />
           </span>
           {showMenu && (
-            <div className="w-[80%] h-screen overflow-scroll absolute top-0 left-0 bg-gray-900 p-4 scrollbar-hide">
+            <div className=" h-screen w-[80%] overflow-hidden absolute top-0 right-0 bg-gray-900 p-4 scrollbar-hide">
               <div className="flex flex-col gap-8 py-2 relative">
                 <div>
                   <span className="self-center text-3xl font-semibold whitespace-nowrap text-primary font-cardo">
@@ -123,9 +122,6 @@ const Navbar = () => {
                   ))}
                 </ul>
                 <div className="flex flex-col gap-4">
-                  <h2 className="text-base uppercase font-titleFont mb-4">
-                    Find me in
-                  </h2>
                   <div className="flex gap-4">
                     <span className="bannerIcon">
                       <FaFacebookF />
@@ -149,82 +145,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
-      <nav className="bg-backround">
-        <div className="flex flex-wrap items-center justify-between md:mx-12 p-4">
-          <Link
-            to={URL_ROUTES.HOME}
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <span className="self-center text-3xl font-semibold whitespace-nowrap text-primary font-cardo">
-              Kiran Bendkoli
-            </span>
-          </Link>
-          <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            className="shadow-md ring-grape  inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden focus:outline-none ring-2"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-            onClick={() => {
-              setNavToggle((prev) => !prev)
-            }}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5 text-grape"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-          <div
-            className={classNames(
-              'w-full md:block md:w-auto',
-              navToggle ? 'block' : 'hidden'
-            )}
-            id="navbar-default"
-          >
-            <ul className="font-medium text-sm sm:text-lg flex flex-col p-4 md:p-0 mt-4  bg-backround  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-              <li onClick={toggleTheme} className="my-0.5">
-                <Toggle
-                  value={theme === 'light' ? true : false}
-                  onChange={toggleTheme}
-                />
-              </li>
-              {navItems.map((item, index) => {
-                return (
-                  <li key={item.url}>
-                    <div
-                      onClick={() => {
-                        navigate(item.url)
-                        updateActive(index)
-                      }}
-                      className={
-                        item.active
-                          ? 'cursor-pointer block py-2 px-3 text-white bg-grape rounded md:bg-transparent md:text-grape md:p-0'
-                          : 'cursor-pointer block py-2 px-3 text-primary rounded md:hover:bg-transparent md:border-0 md:hover:text-grape md:p-0'
-                      }
-                      aria-current="page"
-                    >
-                      {item.title}
-                    </div>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </div>
-      </nav>
     </>
   )
 }
