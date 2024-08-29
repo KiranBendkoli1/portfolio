@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './Home'
 import Portfolio from './Portfolio'
-import Experience from './Experience'
+import Experience from './Experience/Experience'
 
 const Landing = () => {
   return (

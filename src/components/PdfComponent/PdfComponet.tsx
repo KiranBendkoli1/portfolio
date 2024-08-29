@@ -22,7 +22,7 @@ const PdfComponet: React.FC<PdfProps> = ({ name }) => {
     }
   }
   return (
-    <div className="flex justify-center overflow-hidden  bg-backround">
+    <div className="flex justify-center overflow-hidden  ">
       <Document
         file={name}
         className={'w-fit text-center rounded overflow-hidden'}

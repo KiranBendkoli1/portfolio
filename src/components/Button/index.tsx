@@ -10,7 +10,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, type }) => {
   return (
     <>
       <button
-        className="bg-grape text-white py-2 px-6 cursor-pointer rounded-lg"
+        className="px-5 h-12 bg-designColor rounded-lg text-base shadow-sm-light text-white  font-bold tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
         type={type ?? 'button'}
         onClick={onClick}
       >

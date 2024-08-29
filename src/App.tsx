@@ -13,11 +13,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 function App() {
   const theme = useThemeStore((state) => state.theme)
   return (
-    <div className={classNames(theme, 'bg-backround h-svh')}>
-      <div className="h-full">
+    <div>
+      
         <AppRouter />
         <ToastContainer />
-      </div>
+
     </div>
   )
 }

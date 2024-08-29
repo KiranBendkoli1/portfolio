@@ -1,12 +1,10 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import Button from 'components/Button'
 import { Input } from 'components/Input/Input'
 import Title from 'components/Layouts/Title'
-import TitleSeperator from 'components/Seperator/TitleSeperator'
 import { useForm } from 'react-hook-form'
 import contactSchema from 'schemas/contactSchema'
 import { ContactsBody } from 'types/contacts'
-import ContactLeft from './Contact/ContactLeft'
+import ContactLeft from './ContactLeft'
 
 const Contact = () => {
   const {

@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import URL_ROUTES from 'constants/URL_ROUTES'
 import Portfolio from 'pages/publicPages/Portfolio'
 import Resume from 'pages/publicPages/Resume'
-import Contact from 'pages/publicPages/Contact'
 import ProjectDetails from 'pages/publicPages/ProjectDetails'
 import Login from 'pages/publicPages/Login'
 import PublicRoute from './PublicRoute'
@@ -15,6 +14,8 @@ import Profile from 'pages/privatePages/Profile'
 import ProjectListings from 'pages/privatePages/ProjectListings'
 import AddProject from 'pages/privatePages/AddProject'
 import Hero from 'pages/publicPages/Hero'
+import Contact from 'pages/publicPages/Contact'
+import Experience from 'pages/publicPages/Experience'
 const AppRouter = () => {
   return (
     <div className="w-full h-auto bg-bodyColor text-lightText px-4">
@@ -24,6 +25,7 @@ const AppRouter = () => {
             <Route index path={URL_ROUTES.HOME} element={<Hero />} />
             <Route path={URL_ROUTES.PORTFOLIO} element={<Portfolio />} />
             <Route path={URL_ROUTES.RESUME} element={<Resume />} />
+            <Route path={URL_ROUTES.EXPERIENCE} element={<Experience/>}/>
             <Route path={URL_ROUTES.CONTACT} element={<Contact />} />
             <Route
               path={URL_ROUTES.PROJECT_DETAILS}

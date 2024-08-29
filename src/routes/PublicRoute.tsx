@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const PublicRoute = () => {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className=" mx-auto">
       <Navbar />
       <Outlet />
     </div>
