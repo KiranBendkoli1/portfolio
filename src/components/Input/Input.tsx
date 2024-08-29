@@ -21,27 +21,23 @@ export const Input = ({
   className
 }: Props) => {
   return (
-    <div className={className}>
-      <label htmlFor={name} className="text-primary gap-5">
-        <span className="pb-6"> {label}</span>
-        {textArea ? (
-          <textarea
-            {...register(name)}
-            placeholder={placeholder}
-            required={required}
-            rows={5}
-            className="w-full rounded-lg px-2 text-secondary"
-          />
-        ) : (
-          <input
-            {...register(name)}
-            placeholder={placeholder}
-            type={type ?? 'text'}
-            required={required}
-            className="w-full h-11 rounded-lg px-2 text-secondary"
-          />
-        )}
-      </label>
+    <div className={`gap-y-2 ${className}`}>
+      <p className="text-sm text-gray-400 uppercase tracking-wide">{label}</p>
+      {textArea ? (
+        <textarea
+          {...register(name)}
+          required={required}
+          rows={5}
+          className="appearance-none  shadow-sm-light border-gray-700 rounded-b-lg p-2 w-full rounded-lg px-2 bg-[#141518]"
+        />
+      ) : (
+        <input
+          {...register(name)}
+          type={type ?? 'text'}
+          required={required}
+          className="remove-all border-none  resize-none appearance-none focus:outline-none shadow-sm-light border-gray-700 rounded-b-lg p-2 w-full rounded-lg px-2 bg-[#141518] from-[#1e2024] to-[#23272b]"
+        />
+      )}
     </div>
   )
 }

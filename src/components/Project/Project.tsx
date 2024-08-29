@@ -1,7 +1,6 @@
-import TitleSeperator from 'components/Seperator/TitleSeperator'
-import projects from 'data/ProjectsData'
 import React from 'react'
-import { FaChevronRight } from 'react-icons/fa'
+import { BsGithub } from 'react-icons/bs'
+import { FaGlobe } from 'react-icons/fa'
 import { ProjectType } from 'types/common'
 
 interface Props {
@@ -10,27 +9,37 @@ interface Props {
 
 const Project: React.FC<Props> = ({ project }) => {
   return (
-    <div className="bg-backround group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded ">
-      <div className="">
-        <img
-          src={project.img}
-          className="h-[280px] w-[350px] object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-          alt={project.title}
-        />
+    <>
+      <div className="w-full p-4 xl:px-12 h-auto xl:py-10 rounded-lg shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000">
+        <div className="w-full h-[80%] overflow-hidden rounded-lg">
+          <img
+            className="w-full h-60 object-cover group-hover:scale-110 duration-300 cursor-pointer"
+            src={project.img}
+            alt="src"
+          />
+        </div>
+        <div className="w-full mt-5 flex flex-col  gap-6">
+          <div>
+            <div className="flex items-center justify-between">
+              <h3 className="text-base uppercase text-designColor font-normal">
+                {project.title}
+              </h3>
+              <div className="flex gap-2">
+                <span className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer">
+                  <BsGithub />
+                </span>
+                <span className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer">
+                  <FaGlobe />
+                </span>
+              </div>
+            </div>
+            <p className="text-sm tracking-wide mt-3 hover:text-gray-100 duration-300">
+              {project.desc}
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-      <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-        <h1 className="font-cardo text-2xl font-bold text-white">
-          {project.title}
-        </h1>
-        <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          {project.desc}
-        </p>
-        <button className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">
-          View details
-        </button>
-      </div>
-    </div>
+    </>
   )
 }
 
