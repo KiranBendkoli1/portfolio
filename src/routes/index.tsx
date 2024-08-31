@@ -13,16 +13,16 @@ import Messages from 'pages/privatePages/Messages'
 import Profile from 'pages/privatePages/Profile'
 import ProjectListings from 'pages/privatePages/ProjectListings'
 import AddProject from 'pages/privatePages/AddProject'
-import Hero from 'pages/publicPages/Hero'
 import Contact from 'pages/publicPages/Contact'
 import Experience from 'pages/publicPages/Experience'
+import Landing from 'pages/publicPages/Landing'
 const AppRouter = () => {
   return (
     <div className="w-full h-auto bg-bodyColor text-lightText px-4">
       <BrowserRouter>
         <Routes>
           <Route element={<PublicRoute />}>
-            <Route index path={URL_ROUTES.HOME} element={<Hero />} />
+            <Route index path={URL_ROUTES.HOME} element={<Landing />} />
             <Route path={URL_ROUTES.PORTFOLIO} element={<Portfolio />} />
             <Route path={URL_ROUTES.RESUME} element={<Resume />} />
             <Route path={URL_ROUTES.EXPERIENCE} element={<Experience/>}/>
