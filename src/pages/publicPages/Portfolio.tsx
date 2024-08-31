@@ -4,7 +4,7 @@ import projects from 'data/ProjectsData'
 
 const Portfolio = () => {
   return (
-    <div className="">
+    <section id="projects" className='pt-20'>
       <div className="flex justify-center">
         <Title title="My Projects" />
       </div>
@@ -15,7 +15,7 @@ const Portfolio = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

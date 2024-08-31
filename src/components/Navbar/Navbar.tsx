@@ -3,61 +3,79 @@ import URL_ROUTES from 'constants/URL_ROUTES'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import useThemeStore from 'store/useThemeStore'
-import { Toggle } from 'components/Toggle'
-import { classNames } from 'utils'
 import { MdClose } from 'react-icons/md'
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 import { FiMenu } from 'react-icons/fi'
+import { mergeClass } from 'utils'
+
+const initNavs = [
+  {
+    title: 'Home',
+    url: 'home',
+    active: true
+  },
+  {
+    title: 'Projects',
+    url: 'projects',
+    active: false
+  },
+  {
+    title: 'Experience',
+    url: 'experience',
+    active: false
+  },
+  {
+    title: 'Resume',
+    url: URL_ROUTES.RESUME,
+    active: false
+  },
+  {
+    title: 'Contact',
+    url: 'contact',
+    active: false
+  }
+]
 
 const Navbar = () => {
-  const navigate = useNavigate()
   const location = useLocation()
   const [, setUpdateNav] = useState<boolean>()
   const { theme, toggleTheme } = useThemeStore((state) => state)
   const [showMenu, setShowMenu] = useState(false)
-  const [navItems, setNavItems] = useState([
-    {
-      title: 'Home',
-      url: URL_ROUTES.HOME,
-      active: true
-    },
-    {
-      title: 'Portfolio',
-      url: URL_ROUTES.PORTFOLIO,
-      active: false
-    },
-    {
-      title: 'Resume',
-      url: URL_ROUTES.RESUME,
-      active: false
-    },
-    {
-      title: 'Contact',
-      url: URL_ROUTES.CONTACT,
-      active: false
-    }
-  ])
+  const [navItems, setNavItems] = useState(initNavs)
 
-  const updateActive = (index: number) => {
-    setNavItems((prev) => {
-      prev.forEach((value) => (value.active = false))
-      prev[index].active = true
-      return prev
-    })
-  }
+
 
   useEffect(() => {
-    if (location) {
-      setNavItems((prev) => {
-        prev.forEach((value) => {
-          if (value.url === location.pathname) value.active = true
-          else value.active = false
-        })
-        setUpdateNav(true)
-        return prev
-      })
+    if (location.pathname === URL_ROUTES.RESUME) {
+      setNavItems([
+        {
+          title: 'Home',
+          url: URL_ROUTES.HOME,
+          active: false
+        },
+        {
+          title: 'Resume',
+          url: URL_ROUTES.RESUME,
+          active: true
+        }
+      ])
+    } else {
+      setNavItems(initNavs)
     }
   }, [location])
+
+  // useEffect(() => {
+  //   if (location) {
+  //     setNavItems((prev) => {
+  //       prev.forEach((value) => {
+  //         if (value.url === location.pathname) value.active = true
+  //         else value.active = false
+  //       })
+  //       setUpdateNav(true)
+  //       return prev
+  //     })
+  //   }
+  // }, [location])
 
   return (
     <>
@@ -69,21 +87,28 @@ const Navbar = () => {
         </div>
         <div>
           <ul className="hidden mdl:inline-flex items-center gap-6 lg:gap-10">
-            {navItems.map(({ title, url }) => (
+            {navItems.map(({ title, url, active }) => (
               <li
-                className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
+                className={mergeClass(
+                  'text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300',
+                  active ? 'text-designColor hover:text-designColor/50' : ''
+                )}
                 key={url}
               >
-                <ScrollLink
-                  activeClass="active"
-                  to={url}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  {title}
-                </ScrollLink>
+                {url.startsWith('/') ? (
+                  <Link to={url}>{title}</Link>
+                ) : (
+                  <ScrollLink
+                    activeClass="active"
+                    to={url}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    {title}
+                  </ScrollLink>
+                )}
               </li>
             ))}
           </ul>
@@ -102,22 +127,25 @@ const Navbar = () => {
                   </span>
                 </div>
                 <ul className="flex flex-col gap-4">
-                  {navItems.map((item) => (
+                  {navItems.map(({ url, title }) => (
                     <li
-                      key={item.url}
+                      key={url}
                       className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
                     >
-                      <ScrollLink
-                        onClick={() => setShowMenu(false)}
-                        activeClass="active"
-                        to={item.url}
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                      >
-                        {item.title}
-                      </ScrollLink>
+                      {url.startsWith('/') ? (
+                        <Link to={url}>{title}</Link>
+                      ) : (
+                        <ScrollLink
+                          activeClass="active"
+                          to={url}
+                          spy={true}
+                          smooth={true}
+                          offset={-50}
+                          duration={500}
+                        >
+                          {title}
+                        </ScrollLink>
+                      )}
                     </li>
                   ))}
                 </ul>

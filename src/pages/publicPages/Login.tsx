@@ -37,7 +37,6 @@ const Login = () => {
       )
       const user = userCredentials.user
       setIsAuthenticated(user.email??"");
-      console.log(userCredentials)
       toast.success('Login Successfully!', { theme })
       navigate(URL_ROUTES.ADMIN_DASHBOARD)
     } catch (error: any) {

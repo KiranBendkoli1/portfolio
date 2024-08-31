@@ -11,7 +11,6 @@ export interface PdfProps {
 
 const PdfComponet: React.FC<PdfProps> = ({ name }) => {
   const { width: windowWidth } = useDimensions()
-  console.log(windowWidth)
   const getWidth = (windowWidth: number) => {
     if (windowWidth < 500) {
       return windowWidth - 20
@@ -22,7 +21,7 @@ const PdfComponet: React.FC<PdfProps> = ({ name }) => {
     }
   }
   return (
-    <div className="flex justify-center overflow-hidden  ">
+    <div className="flex justify-center overflow-hidden bg-bodyColor">
       <Document
         file={name}
         className={'w-fit text-center rounded overflow-hidden'}

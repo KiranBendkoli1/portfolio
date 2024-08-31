@@ -11,7 +11,7 @@ const Resume = () => {
       <div className="flex justify-center mt-6 items-center text-center">
         <Title title="My Resume" />
       </div>
-      <p className="text-center pb-5">
+      <p className="flex justify-center text-center pb-10">
         <a href={resume} download>
           <Button>Download resume</Button>
         </a>

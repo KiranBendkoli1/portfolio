@@ -3,9 +3,9 @@ interface Props {
   title: string
   subTitle: string
   result: string
-  des: string
+  list: string[]
 }
-const ResumeCard: React.FC<Props> = ({ title, subTitle, result, des }) => {
+const ResumeCard: React.FC<Props> = ({ title, subTitle, result, list }) => {
   return (
     <div className="w-full h-1/3 group flex">
       <div className="w-10 h-[6px] bgOpacity mt-16 relative">
@@ -24,13 +24,17 @@ const ResumeCard: React.FC<Props> = ({ title, subTitle, result, des }) => {
             </p>
           </div>
           <div>
-            <p className="px-4 py-2 text-designColor bg-black bg-opacity-25 rounded-lg flex justify-center items-center shadow-shadowOne text-sm font-medium">
+            <p className="px-4 py-2 font-titleFont text-designColor bg-black bg-opacity-25 rounded-lg flex justify-center items-center shadow-shadowOne text-base font-medium">
               {result}
             </p>
           </div>
         </div>
         <p className="text-sm md:text-base font-medium text-gray-400 group-hover:text-gray-300 duration-300">
-          {des}
+          <ul>
+            {list.map((item: string) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </p>
       </div>
     </div>

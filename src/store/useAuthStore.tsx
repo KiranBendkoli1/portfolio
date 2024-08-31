@@ -5,7 +5,7 @@ interface AuthStoreState {
   isAuthenticated: boolean
   email: string
   clearIsAuthenticated: (email: string) => void
-  setIsAuthenticated: () => void
+  setIsAuthenticated: (email: string) => void
 }
 
 type AuthPersist = (

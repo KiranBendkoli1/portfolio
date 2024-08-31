@@ -1,5 +1,4 @@
-import React from 'react'
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { Typewriter } from 'react-simple-typewriter'
 
 const LeftHero = () => {
@@ -9,12 +8,12 @@ const LeftHero = () => {
     <div className="pl-2 sml:pl-5 md:pl-20  w-full lgl:w-1/2 flex flex-col gap-20">
       <div className="flex flex-col gap-5">
         <h4 className=" text-lg font-normal">WELCOME TO MY WORLD</h4>
-        <h1 className="text-5xl lg:text-6xl font-bold text-white">
+        <h1 className="text-5xl lg:text-[52px] font-bold text-white">
           Hi, I'm{' '}
           <span className="text-designColor capitalize">Kiran Bendkoli</span>
         </h1>
         <h2 className="text-4xl font-bold text-white">
-          a{' '}
+          A{' '}
           <span>
             <Typewriter
               words={[
@@ -32,9 +31,9 @@ const LeftHero = () => {
           </span>
         </h2>
         <p className="text-base font-bodyFont leading-6 tracking-wide">
-          I use animation as a third dimension by which to simplify experiences
-          and kuiding thro each and every interaction. I'm not adding motion
-          just to spruce things up, but doing it in ways that.
+          Software Developer At Winjit Technologies Pvt Ltd. Working as a
+          Frontend developer from past year. Completed Computer Engineering
+          Degree from MVP's KBT College of Engineerring Nashik.
         </p>
       </div>
       {/* Media */}
@@ -42,10 +41,7 @@ const LeftHero = () => {
         <div>
           <div className="flex gap-4 ">
             <span className={iconClasses}>
-              <FaFacebookF />
-            </span>
-            <span className={iconClasses}>
-              <FaTwitter />
+              <FaGithub />
             </span>
             <span className={iconClasses}>
               <FaLinkedinIn />
