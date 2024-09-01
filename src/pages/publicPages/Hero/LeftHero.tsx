@@ -24,6 +24,7 @@ const LeftHero = () => {
               loop
               cursor
               cursorStyle="|"
+              cursorColor="#1a56db"
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1000}
@@ -40,12 +41,20 @@ const LeftHero = () => {
       <div className="flex flex-col xl:flex-row gap-6 lgl:gap-0 justify-between">
         <div>
           <div className="flex gap-4 ">
-            <span className={iconClasses}>
-              <FaGithub />
-            </span>
-            <span className={iconClasses}>
+            <a
+              href="https://www.linkedin.com/in/kiran-bendkoli-2a2b741b9/"
+              target="_blank"
+              className={iconClasses}
+            >
               <FaLinkedinIn />
-            </span>
+            </a>
+            <a
+              href="https://github.com/KiranBendkoli1"
+              target="_blank"
+              className={iconClasses}
+            >
+              <FaGithub />
+            </a>
           </div>
         </div>
       </div>
