@@ -3,7 +3,6 @@ import Home from 'pages/publicPages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import URL_ROUTES from 'constants/URL_ROUTES'
 import Resume from 'pages/publicPages/Resume'
-import Login from 'pages/publicPages/Login'
 import PublicRoute from './PublicRoute'
 import PrivateRoute from './PrivateRoute'
 import Dashboard from 'pages/privatePages/Dashboard'
@@ -19,7 +18,7 @@ import Summary from 'pages/publicPages/Summary'
 const AppRouter = () => {
   return (
     <div className="w-full h-auto bg-bodyColor text-lightText px-4">
-      <BrowserRouter basename='/portfolio'>
+      <BrowserRouter basename="/portfolio">
         <Routes>
           <Route element={<PublicRoute />}>
             <Route index path={URL_ROUTES.HOME} element={<Landing />} />
@@ -31,7 +30,6 @@ const AppRouter = () => {
               path={URL_ROUTES.PROJECT_DETAILS}
               element={<ProjectDetails />}
             />
-            <Route path={URL_ROUTES.LOGIN} element={<Login />} />
           </Route>
           <Route element={<PrivateRoute />}>
             <Route
