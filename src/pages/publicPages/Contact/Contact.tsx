@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import contactSchema from 'schemas/contactSchema'
 import { ContactsBody } from 'types/contacts'
 import ContactLeft from './ContactLeft'
+import { toast } from 'react-toastify'
 
 const Contact = () => {
   const {
@@ -16,9 +17,47 @@ const Contact = () => {
     resolver: yupResolver(contactSchema)
   })
 
-  const onSubmit = (data: ContactsBody) => {
-    console.log(data)
+  const onSubmit = async (data: ContactsBody) => {
+    const { name, email, message, subject, mobile } = data
+    const formData = new FormData()
+    formData.append('name', name)
+    formData.append('mobile', mobile)
+    formData.append('email', email)
+    formData.append('subject', subject)
+    formData.append('message', message)
+    formData.append('access_key', '5c1e07c0-1ccc-45e5-ad4f-cf91788ad2d7')
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+
+    const result = await response.json()
+
+    if (result.success) {
+      toast.success('Message sent successfully!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: 'dark'
+      })
+    } else {
+      toast.error('Error sending message please try again after some time', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: 'dark'
+      })
+      console.log('Error', result)
+    }
   }
+
   return (
     <section
       id="contact"
@@ -43,6 +82,7 @@ const Contact = () => {
                   placeholder={'Enter full name'}
                   required
                   className="w-full lgl:w-1/2 flex flex-col gap-4 from-[#1e2024] to-[#23272b] "
+                  error={errors.name?.message}
                 />
                 <Input
                   name={'mobile'}
@@ -51,7 +91,8 @@ const Contact = () => {
                   type={'number'}
                   placeholder={'Enter mobile number'}
                   required
-                  className="w-full lgl:w-1/2 flex flex-col gap-4 from-[#1e2024] to-[#23272b] " 
+                  className="w-full lgl:w-1/2 flex flex-col gap-4 from-[#1e2024] to-[#23272b] "
+                  error={errors.mobile?.message}
                 />
               </div>
 
@@ -63,6 +104,7 @@ const Contact = () => {
                 placeholder={'Enter email addreess'}
                 required
                 className="flex flex-col gap-4"
+                error={errors.email?.message}
               />
               <Input
                 name={'subject'}
@@ -71,6 +113,7 @@ const Contact = () => {
                 placeholder={'Enter subject'}
                 required
                 className="flex flex-col gap-4"
+                error={errors.subject?.message}
               />
               <Input
                 name={'message'}
@@ -81,6 +124,7 @@ const Contact = () => {
                 required
                 textArea
                 className="flex flex-col gap-4"
+                error={errors.message?.message}
               />
               <div className="w-full">
                 <button

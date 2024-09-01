@@ -8,6 +8,7 @@ export interface Props {
   required: boolean
   name: string
   textArea?: boolean
+  error?: string
 }
 
 export const Input = ({
@@ -18,7 +19,8 @@ export const Input = ({
   required,
   name,
   textArea,
-  className
+  className,
+  error
 }: Props) => {
   return (
     <div className={`gap-y-2 ${className}`}>
@@ -26,7 +28,7 @@ export const Input = ({
       {textArea ? (
         <textarea
           {...register(name)}
-          required={required}
+          // required={required}
           rows={5}
           className={
             'w-full rounded-lg border-t-0 border-l-0 border-r-0 border-b-[3px] border-b-gray-600 bg-[#191b1e] text-lightText px-4 py-2 outline-none active:border-b-transparent duration-300 resize-none'
@@ -36,12 +38,15 @@ export const Input = ({
         <input
           {...register(name)}
           type={type ?? 'text'}
-          required={required}
+          // required={required}
           className={
             'remove-all border-t-0 border-l-0 border-r-0 border-b-[3px] w-full min-h-12 rounded-lg  border-b-gray-600 bg-[#191b1e] text-lightText px-4 outline-none active:border-b-transparent duration-300'
           }
         />
       )}
+      {error ? (
+        <div className="font-medium text-red-600 text-start">{error}</div>
+      ) : null}
     </div>
   )
 }

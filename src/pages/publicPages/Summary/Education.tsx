@@ -40,6 +40,7 @@ const Education = () => {
       <div className="mt-14 w-full h-[1000px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
         {education.map((item) => (
           <ResumeCard
+            key={item.college}
             title={item.deg}
             subTitle={item.college}
             result={item.duration}

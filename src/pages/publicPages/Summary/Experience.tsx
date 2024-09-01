@@ -50,6 +50,7 @@ const Experience = () => {
       <div className="mt-14 w-full h-[1000px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
         {experience.map((item) => (
           <ResumeCard
+            key={item.company}
             title={item.position}
             subTitle={item.company}
             result={item.duration}

@@ -1,6 +1,7 @@
 export interface ContactsBody {
-  email: string
   name: string
+  mobile: string
+  email: string
+  subject: string
   message: string
-  mobile?: string
 }
