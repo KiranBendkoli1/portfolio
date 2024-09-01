@@ -20,8 +20,8 @@ const initNavs = [
     active: false
   },
   {
-    title: 'Experience',
-    url: 'experience',
+    title: 'Summary',
+    url: 'summary',
     active: false
   },
   {
@@ -42,8 +42,6 @@ const Navbar = () => {
   const { theme, toggleTheme } = useThemeStore((state) => state)
   const [showMenu, setShowMenu] = useState(false)
   const [navItems, setNavItems] = useState(initNavs)
-
-
 
   useEffect(() => {
     if (location.pathname === URL_ROUTES.RESUME) {
@@ -90,8 +88,7 @@ const Navbar = () => {
             {navItems.map(({ title, url, active }) => (
               <li
                 className={mergeClass(
-                  'text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300',
-                  active ? 'text-designColor hover:text-designColor/50' : ''
+                  'text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300'
                 )}
                 key={url}
               >

@@ -1,16 +1,15 @@
-import React from 'react'
-import Home from './Home'
-import Portfolio from './Portfolio'
-import Experience from './Experience/Experience'
+
+import Portfolio from './Projects/Portfolio'
 import Contact from './Contact'
 import Hero from './Hero'
+import Summary from './Summary'
 
 const Landing = () => {
   return (
     <div>
       <Hero />
       <Portfolio />
-      <Experience />
+      <Summary />
       <Contact />
     </div>
   )

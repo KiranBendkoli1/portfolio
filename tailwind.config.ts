@@ -16,7 +16,7 @@ const config: Config = {
         bodyColor: '#212428',
         lightText: '#c4cfde',
         boxBg: 'linear-gradient(145deg, #1e2024, #23272b)',
-        designColor: '#ff014f',
+        designColor: '#1a56db',
         backround: 'rgba(var(--background))',
         border: 'rgba(var(--border))',
         card: 'rgba(var(--card))',

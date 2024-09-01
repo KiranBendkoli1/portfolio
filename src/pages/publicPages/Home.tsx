@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
-import Portfolio from './Portfolio'
+import Portfolio from './Projects/Portfolio'
 import profileImg from '../../assets/images/kiran2.png'
 import Button from 'components/Button'
 
