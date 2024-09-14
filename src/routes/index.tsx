@@ -18,7 +18,7 @@ import Summary from 'pages/publicPages/Summary'
 const AppRouter = () => {
   return (
     <div className="w-full h-auto bg-bodyColor text-lightText px-4">
-      <BrowserRouter basename="/portfolio">
+      <BrowserRouter>
         <Routes>
           <Route element={<PublicRoute />}>
             <Route index path={URL_ROUTES.HOME} element={<Landing />} />

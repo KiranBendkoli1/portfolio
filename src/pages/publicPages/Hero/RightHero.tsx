@@ -10,7 +10,7 @@ const RightHero = () => {
         src={profileImg}
         alt="bannerImg"
       />
-      <div className="absolute bottom-0 w-[350px] h-[300px] lgl:w-[300px] lgl:h-[350px] bg-gradient-to-r from-[#1e2024] to-[#202327] shadow-shadowOne flex justify-center items-center"></div>
+      <div className="absolute bottom-0 w-[300px] h-[300px] lgl:w-[300px] lgl:h-[350px] bg-gradient-to-r from-[#1e2024] to-[#202327] shadow-shadowOne flex justify-center items-center"></div>
     </div>
   )
 }
