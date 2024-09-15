@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://portfolio.kiranbendkoli.dev/",
+  "homepage": "https://kiranbendkoli.dev/",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
