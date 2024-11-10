@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "http://kiranbendkoli1.github.io/portfolio/",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
